@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\Homework">
       <UniqueIdentifier>{91c8cbf4-2fe1-47e4-a50b-931919148f73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Homework\Hw1">
+      <UniqueIdentifier>{7c81f15c-760a-4ff9-82a4-c7de090a256d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2.cpp">
@@ -225,11 +228,20 @@
     <ClCompile Include="7-2.cpp">
       <Filter>소스 파일\7</Filter>
     </ClCompile>
-    <ClCompile Include="1-white.cpp">
-      <Filter>소스 파일\Homework</Filter>
+    <ClCompile Include="hw1-1.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
     </ClCompile>
-    <ClCompile Include="2.ACMHotel.cpp">
-      <Filter>소스 파일\Homework</Filter>
+    <ClCompile Include="hw1-2.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="hw1-3.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="hw1-4.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="hw1-5.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
