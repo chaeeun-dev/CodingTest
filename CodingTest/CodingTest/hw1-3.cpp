@@ -13,13 +13,15 @@ int main(void)
 		cin >> N >> init >> dest;
 
 		int BCount = 0, WCount = 0;
-		for (int j = 0; j < init.length(); ++j)
+		for (size_t j = 0; j < init.length(); ++j)
 		{
 			if (init[j] != dest[j])
+			{
 				if (init[j] == 'B')
 					BCount++;
 				else if (init[j] == 'W')
 					WCount++;
+			}
 		}
 		
 		int result = 0;
