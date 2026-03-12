@@ -30,4 +30,5 @@ int main(void)
 	}
 
 	std::cout << result << std::endl;
+	return 0;
 }
