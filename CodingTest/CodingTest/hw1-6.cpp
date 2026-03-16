@@ -2,88 +2,78 @@
 #include <string>
 #include <cmath>
 
-int main(void)
+using namespace std;
+
+int solution(string dartResult)
 {
-	std::string str;
-	std::cin >> str;
+	int answer = 0;
+	
+	size_t strSize = dartResult.length();
+	int initVal[3]{};
+	int order = 0;
 
-	size_t size = str.length();
-	size_t firstIndex = 0, lastIndex = 0;	// 숫자 인덱스(10 구분 위해)
-	int inputVal, preVal = 0;
-	int result = 0;
-	bool isMultiply = false, isSubtract = false;
-
-	for (size_t i = 0; i < size; ++i)
+	for (size_t i = 0; i < strSize; ++i)
 	{
-		isMultiply = false, isSubtract = false;
-
-		// 숫자 - 제곱 - (옵션)
-		// 제곱 전까지 숫자로 변환
-		if (str[i] == 'S' || str[i] == 'D' || str[i] == 'T')
+		// 숫자
+		if (isdigit(dartResult[i]))
 		{
-			lastIndex = i - 1;
-			
-			// 숫자 str -> int
-			if (firstIndex == lastIndex)	// 한 자리 숫자일 떄
+			if (isdigit(dartResult[i + 1]))	// 10
 			{
-				std::string toInt = str.substr(firstIndex, 1);
-				inputVal = std::stoi(toInt);
-
-				firstIndex++;
+				initVal[order] = 10;
+				i++;
 			}
-			else  // 숫자가 10일 떄
+			else  // 0 ~ 9
 			{
-				inputVal = 10;
-
-				firstIndex += 2;
+				initVal[order] = dartResult[i] - '0';	// stoi 대신
 			}
-			preVal = inputVal;
+
+			if (dartResult[i + 1] == 'D')
+			{
+				initVal[order] = pow(initVal[order], 2);
+			}
+			else if (dartResult[i + 1] == 'T')
+			{
+				initVal[order] = pow(initVal[order], 3);
+			}
 
 			// 옵션
-			if (str[i + 1] == '*')
+			if (dartResult[i + 2] == '*')
 			{
-				isMultiply = true;
-				firstIndex++;
+				if (order == 0)
+				{
+					initVal[order] *= 2;
+				}
+				else
+				{
+					initVal[order - 1] *= 2;
+					initVal[order] *= 2;
+				}
 			}
-			else if (str[i + 1] == '#')
+			else if (dartResult[i + 2] == '#')
 			{
-				isSubtract = true;
-				firstIndex++;
+				initVal[order] *= -1;
 			}
 
-			// 바로 전에 얻은 점수 + 해당 점수를 곱하기
-			if (isMultiply)
-			{
-				if (str[i] == 'S')
-					result += inputVal * 2 + preVal * 2;
-				else if (str[i] == 'D')
-					result += pow(inputVal, 2) * 2 + preVal * 2;
-				else if (str[i] == 'T')
-					result += pow(inputVal, 3) * 2 + preVal * 2;
-			}
-			if (isSubtract)
-			{
-				if (str[i] == 'S')
-					result -= inputVal;
-				else if (str[i] == 'D')
-					result -= pow(inputVal, 2);
-				else if (str[i] == 'T')
-					result -= pow(inputVal, 3);
-			}
-			if (!isMultiply && !isSubtract)
-			{
-				if (str[i] == 'S')
-					result += inputVal;
-				else if (str[i] == 'D')
-					result += pow(inputVal, 2);
-				else if (str[i] == 'T')
-					result += pow(inputVal, 3);
-			}
-	
-			firstIndex++;
+			order++;
 		}
 	}
 
-	std::cout << result;
+	answer = initVal[0] + initVal[1] + initVal[2];
+	return answer;
+}
+
+int main(void)
+{
+	cout << solution("1S2D*3T") << endl;
+	cout << solution("1D2S#10S") << endl;
+	cout << solution("1D2S0T") << endl;
+	cout << solution("1S*2T*3S") << endl;
+	cout << solution("1D#2S*3S") << endl;
+	cout << solution("1T2D3D#") << endl;
+	cout << solution("1D2S3T*") << endl;
+
 	return 0;
 }
+
+// isdigit(str[i]) -> 문자열에 숫자가 있는지? 있으면 1 없으면 0 반환
+// str to int -> stoi 말고 - '0'로 해도 됨.
