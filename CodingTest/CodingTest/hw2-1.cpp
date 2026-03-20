@@ -1,3 +1,6 @@
+// 동전 0(백준, 그리디)
+// https://www.acmicpc.net/problem/11047
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

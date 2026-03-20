@@ -1,3 +1,6 @@
+// 다트게임(Programmers)?
+// https://school.programmers.co.kr/learn/courses/30/lessons/17682
+
 #include <iostream>
 #include <string>
 #include <cmath>

@@ -395,6 +395,9 @@
     <ClCompile Include="hw2-1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="hw2-2.cpp" />
+    <ClCompile Include="hw2-3.cpp" />
+    <ClCompile Include="hw2-4.cpp" />
     <ClCompile Include="hw2-5.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>

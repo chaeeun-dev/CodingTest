@@ -1,3 +1,6 @@
+// ACM 호텔(백준)
+// https://www.acmicpc.net/problem/10250
+
 #include <iostream>
 
 int main(void)

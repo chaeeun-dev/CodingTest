@@ -1,3 +1,6 @@
+// 오셀로 재배치(백준)
+// https://www.acmicpc.net/problem/13413
+
 #include <iostream>
 using namespace std;
 

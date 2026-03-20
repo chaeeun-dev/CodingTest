@@ -1,3 +1,6 @@
+// 체육복 (Programmers, 그리디)
+// https://school.programmers.co.kr/learn/courses/30/lessons/42862
+
 #include <string>
 #include <vector>
 #include <algorithm>

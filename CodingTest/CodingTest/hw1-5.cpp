@@ -1,3 +1,6 @@
+// 십자말 풀이(TUKorea)
+// http://210.93.60.51/problem/0071
+
 #include <iostream>
 #include <string>
 

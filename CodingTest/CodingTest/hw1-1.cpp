@@ -1,3 +1,6 @@
+// วฯพแฤญ(น้มุ)
+// https://www.acmicpc.net/problem/1100
+
 #include <iostream>
 
 int main(void)
