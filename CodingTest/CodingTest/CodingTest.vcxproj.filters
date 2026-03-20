@@ -252,7 +252,7 @@
     <ClCompile Include="hw2-1.cpp">
       <Filter>소스 파일\Homework\Hw2</Filter>
     </ClCompile>
-    <ClCompile Include="hw2-6.cpp">
+    <ClCompile Include="hw2-5.cpp">
       <Filter>소스 파일\Homework\Hw2</Filter>
     </ClCompile>
   </ItemGroup>
