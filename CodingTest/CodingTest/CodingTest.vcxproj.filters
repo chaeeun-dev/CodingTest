@@ -46,6 +46,9 @@
     <Filter Include="소스 파일\Pratice\BaekJoon.7">
       <UniqueIdentifier>{4dafe4cf-4259-4255-87b4-801f872c673b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Lecture">
+      <UniqueIdentifier>{3d80c59a-b068-45d4-96f9-9b42b09f0fd9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1-2.cpp">
