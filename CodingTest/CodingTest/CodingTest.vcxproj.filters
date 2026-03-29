@@ -54,5 +54,38 @@
     <ClCompile Include="Homework\Hw3\hw3-1.cpp">
       <Filter>소스 파일\Homework</Filter>
     </ClCompile>
+    <ClCompile Include="Homework\Hw2\hw2-1.cpp">
+      <Filter>소스 파일\Homework\Hw2</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw2\hw2-2.cpp">
+      <Filter>소스 파일\Homework\Hw2</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw2\hw2-3.cpp">
+      <Filter>소스 파일\Homework\Hw2</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw2\hw2-4.cpp">
+      <Filter>소스 파일\Homework\Hw2</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw2\hw2-5.cpp">
+      <Filter>소스 파일\Homework\Hw2</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw1\hw1-1.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw1\hw1-2.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw1\hw1-3.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw1\hw1-4.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw1\hw1-5.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw1\hw1-6.cpp">
+      <Filter>소스 파일\Homework\Hw1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

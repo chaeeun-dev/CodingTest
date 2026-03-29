@@ -25,7 +25,7 @@ vector<vector<int>> combi(vector<int>lst, int n)
 	}
 	else if (n > 1)
 	{
-		for (int i = 0; i < lst.size() - n + 1; ++i)
+		for (int i = 0; i < lst.size() - n + 1/*전체 - 뽑을 개수 + 1 => 첫 번째 카드 제한*/; ++i)
 		{
 			vector<int> slice(lst.begin() + i + 1, lst.end());
 			for (vector<int> temp : combi(slice, n - 1))
