@@ -87,5 +87,11 @@
     <ClCompile Include="Homework\Hw1\hw1-6.cpp">
       <Filter>소스 파일\Homework\Hw1</Filter>
     </ClCompile>
+    <ClCompile Include="Homework\Hw3\hw3-6.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw3\hw3-2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
