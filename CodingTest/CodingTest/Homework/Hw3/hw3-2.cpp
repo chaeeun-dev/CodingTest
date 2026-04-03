@@ -7,7 +7,9 @@
 
 using namespace std;
 
-int BFS(int N)
+int d[] = { -1, 1, 2 };
+
+int BFS(int N, int K)
 {
 	// 거리 0으로 초기화
 	int distance = 0;
@@ -17,12 +19,42 @@ int BFS(int N)
 
 	// 방문 처리 + 큐에 삽입
 	visited[N] = true;
-	queue<int, int> q;
-	q.push((N, distance));
+	queue<pair<int, int>> q;
+	q.push({ N, distance });
 
 	while (!q.empty())	// 큐가 빌 때까지
 	{
+		int cur_pos = q.front().first;
+		int cur_dis = q.front().second;
+		q.pop();
 
+		if (cur_pos == K)
+		{
+			return cur_dis;
+		}
+
+		for (int i = 0; i < 3; ++i)
+		{
+			int n_pos;
+
+			if (i == 2)
+			{
+				n_pos = cur_pos * d[i];
+			}
+			else
+			{
+				n_pos = cur_pos + d[i];
+			}
+
+			if (n_pos >= 0 && n_pos <= 100000)
+			{
+				if (!visited[n_pos])
+				{
+					visited[n_pos] = true;
+					q.push({ n_pos, cur_dis + 1 });
+				}
+			}
+		}
 	}
 	return 0;
 }
@@ -32,5 +64,5 @@ int main(void)
 	int N, K;
 	cin >> N >> K;
 
-	BFS(N);
+	cout << BFS(N, K) << endl;
 }
