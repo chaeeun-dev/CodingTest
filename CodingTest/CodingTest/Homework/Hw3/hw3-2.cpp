@@ -9,7 +9,7 @@ using namespace std;
 
 int d[] = { -1, 1, 2 };
 
-int BFS(int N, int K)
+int BFS(int x, int y)
 {
 	// 거리 0으로 초기화
 	int distance = 0;
@@ -18,9 +18,9 @@ int BFS(int N, int K)
 	vector<bool> visited(100000, false);
 
 	// 방문 처리 + 큐에 삽입
-	visited[N] = true;
+	visited[x] = true;
 	queue<pair<int, int>> q;
-	q.push({ N, distance });
+	q.push({ x, distance });
 
 	while (!q.empty())	// 큐가 빌 때까지
 	{
@@ -28,7 +28,7 @@ int BFS(int N, int K)
 		int cur_dis = q.front().second;
 		q.pop();
 
-		if (cur_pos == K)
+		if (cur_pos == y)
 		{
 			return cur_dis;
 		}
