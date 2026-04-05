@@ -93,10 +93,10 @@
     <ClCompile Include="Homework\Hw3\hw3-2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="lecture3-1.cpp">
+    <ClCompile Include="Homework\Hw3\hw3-3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="lecture3-2.cpp">
+    <ClCompile Include="Homework\Hw3\hw3-7.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

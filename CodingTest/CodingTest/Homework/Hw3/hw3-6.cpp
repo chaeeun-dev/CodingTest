@@ -15,7 +15,7 @@ int dc[] = { 0, 0, -1, 1, -1, 1, -1, 1 };
 
 int R, C;
 
-vector<vector<int>> v;
+vector<vector<int>> graph;
 
 // 1: ¶¥
 // 0: ¹Ù´Ù
@@ -24,7 +24,7 @@ void DFS_Stack(int r, int c)
 {
 	stack<pair<int, int>> s;
 	s.push({ r, c });
-	v[r][c] = 0;
+	graph[r][c] = 0;
 
 	while (!s.empty())
 	{
@@ -39,9 +39,9 @@ void DFS_Stack(int r, int c)
 
 			if (nr >= 0 && nr < R && nc >= 0 && nc < C)
 			{
-				if (v[nr][nc] == 1)
+				if (graph[nr][nc] == 1)
 				{
-					v[nr][nc] = 0;
+					graph[nr][nc] = 0;
 					s.push({ nr, nc });
 				}
 			}
@@ -58,13 +58,13 @@ int main(void)
 		if (C == 0 && R == 0)
 			break;
 
-		v.assign(R, vector<int>(C));
+		graph.assign(R, vector<int>(C));
 
 		for (int i = 0; i < R; ++i)
 		{
 			for (int j = 0; j < C; ++j)
 			{
-				cin >> v[i][j];
+				cin >> graph[i][j];
 			}
 		}
 
@@ -73,7 +73,7 @@ int main(void)
 		{
 			for (int j = 0; j < C; ++j)
 			{
-				if (v[i][j] == 1)
+				if (graph[i][j] == 1)
 				{
 					count++;
 					DFS_Stack(i, j);
