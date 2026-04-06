@@ -96,7 +96,10 @@
     <ClCompile Include="Homework\Hw3\hw3-3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Homework\Hw3\hw3-7.cpp">
+    <ClCompile Include="Homework\Hw3\hw3-4.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw3\hw3-5.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
