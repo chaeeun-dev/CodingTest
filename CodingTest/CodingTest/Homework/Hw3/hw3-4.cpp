@@ -15,24 +15,54 @@
 
 using namespace std;
 vector<vector<int>> graph;
+vector<string> airport;
+vector<string> path;
+bool isFound = false;
+int ticketNum;
 
-void DFS_Rec(int tickeNum)
+void DFS_Rec(string startPort)
 {
-    // 출발 공항의 airport 리스트에서 인덱스 구함
-    // for c - 0 ~ N - , 출발 공항에서 갈 수 있는 알파벳이 빠른 공항을 찾음
-        // graph[r][c] 경로가 존재한다면
-        // 해당 경로 여행 graph[r][c]--;
-        // 티켓 개수 1 감소 tickets--;
-        // port = ports[c] 인덱스 c에 해당하는 도착 공항을 출발 공항으로 재귀 호출
-        // if ticketsNum == 0 return 결과
-        // else -> 다른 경로를 찾아야함. grpah[r][c]++ r -> c 여행 경로 복원, ticketsNum++;
+    path.push_back(startPort);
 
+    // 모든 티켓을 사용했다면
+    if (ticketNum == 0)
+    {
+        isFound = true;
+        return;
+    }
+
+    // 출발 공항의 airport 리스트에서의 인덱스를 구함
+    int startPortIndex = find(airport.begin(), airport.end(), startPort) - airport.begin();
+
+    // 출발 공항에서 갈 수 있는 알파벳이 빠른 공항을 찾음
+    for (int c = 0; c < airport.size(); ++c)
+    {
+        // startPort -> c 경로가 존재한다면
+        if (graph[startPortIndex][c] > 0)
+        {
+            graph[startPortIndex][c]--; // 해당 경로 여행
+            ticketNum--;    // 티켓 개수 감소
+
+            // 인덱스 c에 해당하는 도착 공항을 출발 공항으로 재귀 호출
+            DFS_Rec(airport[c]);
+
+            if (isFound)
+                return;
+            else
+            {
+                graph[startPortIndex][c]++;     // 여행 경로 복원
+                ticketNum++;
+            }
+        }
+    }
+
+    path.pop_back();
 }
 
 vector<string> solution(vector<vector<string>> tickets) 
 {
     // STEP1. 티켓을 조회해서 모든 공항을 중복을 허락하지 않고 알파벳 순서로 공항 리스트 생성
-    vector<string> airport;
+
     for (vector<string> v : tickets)
     {
         for (string str : v)
@@ -66,17 +96,17 @@ vector<string> solution(vector<vector<string>> tickets)
     }
 
     // STEP3. ICN에서 시작해서 DFS 재귀 백트레킹으로 티켓을 모두 사용하는 경로를 탐색
-    int ticketNum = tickets.size();
-    DFS_Rec(ticketNum);
+    ticketNum = tickets.size();
+    DFS_Rec("ICN");
 
-    vector<string> answer;
+    vector<string> answer = path;
     return answer;
 }
 
 int main(void)
 {
     solution({ {"ICN", "JFK"},{"HND", "IAD"},{"JFK", "HND"} });
-    cout << '\n\n';
+    //cout << '\n\n';
 
     solution({ {"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL", "SFO"} });
 
