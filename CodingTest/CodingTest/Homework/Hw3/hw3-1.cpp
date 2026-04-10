@@ -19,13 +19,20 @@ vector<bool> visitedBFS;
 
 void DFS_Rec(int start)
 {
-	visitedDFSRec[start] = true;
-	cout << start << ' ';
+	if (!visitedDFSRec[start])
+	{
+		visitedDFSRec[start] = true;
+		cout << start << ' ';
+	}
 
 	for (int i = 0; i <= N; ++i)
 	{
 		if (!visitedDFSRec[i] && graph[start][i])
+		{
+			visitedDFSRec[i] = true;
+			cout << i << ' ';
 			DFS_Rec(i);
+		}
 	}
 }
 
