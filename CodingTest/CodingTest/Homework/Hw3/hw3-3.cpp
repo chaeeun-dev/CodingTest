@@ -16,17 +16,18 @@ vector<vector<bool>> graph;
 vector<int> answer;	// 중요한 교차로 목록
 vector<bool> visited;
 
-// 오류 남!!!
 void DFS_Rec(int start, int skip)
 {
 	visited[start] = true;
 
 	for (int i = 1; i <= N; ++i)
 	{
-		if (i != skip && !visited[i] && graph[start][i])
+		if (i == skip)
+			continue;
+
+		if (!visited[i] && graph[start][i])
 		{
-			int start = (i == 1 ? 2 : 1);
-			DFS_Rec(start, i);
+			DFS_Rec(i, skip);
 		}
 	}
 }
@@ -98,7 +99,7 @@ int main(void)
 
 		// STEP2 - 임의의 교차로에서 DFS로 완전 순회하면 i를 제외한 모든 교차로를 방문해야 함
 		int start = (i == 1 ? 2 : 1);	// i가 아닌 아무 교차로
-		DFS_Stack(start, i);	// DFS 완전 탐색 수행
+		DFS_Rec(start, i);	// DFS 완전 탐색 수행
 
 		// STEP3 - i를 제외하고 방문 못한 노드가 있으면 중요한 교차로임
 		for (int j = 1; j <= N; ++j)
