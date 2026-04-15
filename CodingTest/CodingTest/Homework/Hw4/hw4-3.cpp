@@ -41,9 +41,9 @@ int main(void)
 	//왼쪽 회전 행렬
 	// 하는 중!!!!
 	cout << 'L' << endl;
-	for (int i = 4; i <= 0; --i)
+	for (int i = 4; i >= 0; --i)
 	{
-		for (int j = 0; j < 2; ++j)
+		for (int j = 0; j <= 2; ++j)
 		{
 			cout << M[j][i] << ' ';
 		}
