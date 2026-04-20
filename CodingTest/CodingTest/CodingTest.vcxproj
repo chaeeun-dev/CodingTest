@@ -204,7 +204,9 @@
     <ClCompile Include="Homework\Hw4\hw4-2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Homework\Hw4\hw4-3.cpp" />
+    <ClCompile Include="Homework\Hw4\hw4-3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Homework\Hw4\hw4-4.cpp" />
     <ClCompile Include="Homework\Hw4\hw4-5.cpp" />
     <ClCompile Include="Homework\Practice.cpp">
@@ -215,6 +217,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Lecture\Ch4\lecture4-1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Lecture\Ch5\lecture5.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
