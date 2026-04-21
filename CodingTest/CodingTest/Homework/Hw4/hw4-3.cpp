@@ -25,7 +25,7 @@ int main(void)
 
 			cout << M[i][j];
 
-			if (i != A - 1 || j != B - 1)
+			if (j != B - 1)
 				cout << ' ';
 		}
 		cout << "\n";
@@ -39,7 +39,7 @@ int main(void)
 		{
 			cout << M[j][i];
 
-			if (i != B - 1 || j != 0)
+			if (j != 0)
 				cout << ' ';
 		}
 		cout << '\n';
@@ -53,7 +53,7 @@ int main(void)
 		{
 			cout << M[j][i];
 			
-			if (i != 0 || j != A - 1)
+			if (j != A - 1)
 				cout << ' ';
 		}
 		cout << '\n';
@@ -67,7 +67,7 @@ int main(void)
 		{
 			cout << M[j][i];
 
-			if (i != B - 1 || j != A - 1)
+			if (j != A - 1)
 				cout << ' ';
 		}
 
