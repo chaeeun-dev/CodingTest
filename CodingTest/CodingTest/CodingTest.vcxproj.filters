@@ -141,5 +141,20 @@
     <ClCompile Include="Lecture\Ch5\lecture5.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Homework\Hw5\hw5-1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw5\hw5-2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw5\hw5-3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw5\hw5-4.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Homework\Hw5\hw5-5.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
