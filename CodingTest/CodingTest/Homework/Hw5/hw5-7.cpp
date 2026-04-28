@@ -44,7 +44,7 @@ int main(void)
 
 	cin >> M;
 
-	int start = N;
+	int start = 0;
 	int end = *max_element(request.begin(), request.end());		// 상한을 1'000'000'000으로 하면 안 됨, 요청된 예산 중에 최대값
 	int answer = 0;
 
