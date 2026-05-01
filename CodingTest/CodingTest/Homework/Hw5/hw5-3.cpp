@@ -12,20 +12,33 @@ using namespace std;
 int main(void)
 {
 	stack<string> s;
-	string str;
+	string input;
 
-	cin >> str;
+	cin >> input;
 	
-	for (size_t i = 0; i < str.size(); ++i)
+	for (char c : input)
 	{
-		if (isalpha(str[i]))
-			s.push(string{ str[i] });	// 생성자로
+		// 알파벳
+		if (c >= 'a' && c <= 'z')
+		{
+			string ctos = string(1, c);
+			s.push(ctos);
+		}
+		// 부호
 		else
 		{
-			//b = s.pop();
+			// 스택에서 꺼냄 - top과 pop은 쌍으로!
+			string s2 = s.top();
+			s.pop();
+			string s1 = s.top();
+			s.pop();
+
+			string str = "(" + s1 + c + s2 + ")";
+
+			// 스택에 결과를 넣음
+			s.push(str);
 		}
-
 	}
-}
 
-//
+	cout << s.top() << endl;
+}
