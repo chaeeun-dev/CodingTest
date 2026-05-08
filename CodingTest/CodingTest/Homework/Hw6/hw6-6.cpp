@@ -1,33 +1,40 @@
-﻿// 1로 만들기 (TUKorea, 백준1463, DP) 
-// http://210.93.60.51/problem/0183
-// https://www.acmicpc.net/problem/1463
+﻿// 설탕배달(TUKorea, 백준2839, DP) 
+// http://210.93.60.51/problem/0182
 
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-// dp[i]: i를 1로 만드는 최소 연산 횟수
-// dp[i] = min(dp[i-1], dp[i/2], dp[i/3]) + 1
+// 설탕 배달 N kg을 3, 5 kg 봉지를 최소한으로 사용해서 배달
+// dp[i]: ikg을 3, 5kg 봉지로 만드는 최소 봉지 개수
+// dp[0] = 0, 나머지 dp[i] = INF 초기화
+
+// 점화식
+// 모든 k (3, 5)에 대해서 dp[i-k]가 INF가 아니면,
+// dp[i] = min(dp[i], dp[i-k] + 1)
 
 int main(void)
 {
 	int N;
 	cin >> N;
-	
-	vector<int> dp(N + 1, 0);
-	for (int i = 2; i < N + 1; ++i)
-	{
-		// X가 3으로 나누어 떨어지면 3으로 나눈다.
-		// X가 2로 나누어 떨어지면 2로 나눈다
-		// 1을 뺀다
 
-		dp[i] = dp[i - 1] + 1;
-		if (i % 2 == 0)
-			dp[i] = min(dp[i], dp[i / 2] + 1);
-		if (i % 3 == 0)
-			dp[i] = min(dp[i], dp[i / 3] + 1);
+	int x = 1000'000'000;
+	vector<int> dp(N + 1, x);
+	dp[0] = 0;
+
+	for (int k : {3, 5})
+	{
+		for (int i = k; i < N + 1; ++i)
+		{
+			if (dp[i - k] != x)
+				dp[i] = min(dp[i], dp[i - k] + 1);
+		}
 	}
 
-	cout << dp[N];
+	// 정확하게 N kg을 만들 수 없다면 -1 출력
+	if (dp[N] != x)
+		cout << dp[N] << endl;
+	else
+		cout << -1 << endl;
 }
