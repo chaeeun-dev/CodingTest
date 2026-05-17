@@ -57,7 +57,7 @@ int main(void)
 		int mid = (start + end) / 2;	// 중간 값으로 조건을 만족하는지 검사
 		if (check(mid))		// mid 인접 거리로 C개의 공유기를 다 설치할 수 있는가?
 		{
-			answer = mid - 1;	// 정답 후보
+			answer = mid;	// 정답 후보
 			start = mid + 1;	// 오른쪽 범위 탐색(최대값 구해야 함)
 		}
 		else
@@ -66,5 +66,5 @@ int main(void)
 		}
 	}
 
-	cout << answer + 1 << endl;
+	cout << answer << endl;
 }

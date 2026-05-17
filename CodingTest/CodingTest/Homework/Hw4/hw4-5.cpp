@@ -25,20 +25,24 @@ int main(void)
 	// 도착 시간을 기준으로 정렬
 	sort(v.begin(), v.end());
 
-	// Test
+	long long clock = 0;
+
 	for (pair<int, int> p : v)
 	{
-		cout << p.first << ' ' << p.second << endl;
+		int arrive = p.first;
+		int check = p.second;
+
+		// 아직 소가 안 왔으면 기다림
+		if (clock < arrive)
+			clock = arrive;
+
+		// 검문 진행
+		clock += check;
 	}
 
-	int clock = 0;
-	for (pair<int, int> p : v)
-	{
-		if (clock < p.first)	// 현재 시각 < 소의 도착 시간
-			clock = p.first;	// -> 현재 시각을 소의 도착 시간으로 설정
+	cout << clock;
 
-		// 도착 시간으로 더하기
-	}
+	return 0;
 }
 
 // 0
