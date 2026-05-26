@@ -272,6 +272,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Homework\Hw7\hw7-1.cpp" />
+    <ClCompile Include="Homework\Hw7\hw7-2.cpp" />
+    <ClCompile Include="Homework\Hw7\hw7-3.cpp" />
+    <ClCompile Include="Homework\Hw7\hw7-4.cpp" />
+    <ClCompile Include="Homework\Hw7\hw7-5.cpp" />
+    <ClCompile Include="Homework\Hw7\hw7-6.cpp" />
+    <ClCompile Include="Homework\Hw7\hw7-7.cpp" />
     <ClCompile Include="Homework\Practice.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
