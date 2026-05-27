@@ -10,25 +10,27 @@ using namespace std;
 
 int main()
 {
+    // C: 닭 마리수, N: 소 마리수
     int C, N;
     cin >> C >> N;
 
+    // 닭 시간
+    // chicken = [7, 8, 6, 2, 9]
     vector<int> chicken(C);
-
     for (int i = 0; i < C; ++i)
     {
         cin >> chicken[i];
     }
 
-    // {시작 시간, 종료 시간}
+    // 소 시간 [시작 시간, 종료 시간]
+    // cow = [[2,5], [4,9], [2,5], [8,13]]
     vector<pair<int, int>> cow(N);
-
     for (int i = 0; i < N; ++i)
     {
         cin >> cow[i].first >> cow[i].second;
     }
 
-    // 닭 시간 정렬
+    // 닭 시간 오름차순 정렬
     sort(chicken.begin(), chicken.end());
 
     // 소 시작 시간 기준 정렬
