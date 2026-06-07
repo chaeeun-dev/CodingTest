@@ -1,59 +1,92 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 
 int N;
-vector<int> indegree;
-vector<int > T;
 
-// 인접 리스트 2차원 그래프
+vector<int> indegree;
+vector<int> T;
+
+// 인접 리스트
 vector<vector<int>> graph;
 
 vector<int> dp;
 
 void topology_sort()
 {
-	queue<int> q;
+    queue<int> q;
 
-	for (int i = 1; i < N + 1; ++i)
-	{
-		if (indegree[i] == 0)
-			q.push(i);
-	}
+    // 진입차수 0인 작업 시작
+    for (int i = 1; i <= N; ++i)
+    {
+        if (indegree[i] == 0)
+            q.push(i);
+    }
 
-	while (!q.empty())
-	{
-		int now = q.front();
-		q.pop();
+    while (!q.empty())
+    {
+        int now = q.front();
+        q.pop();
 
-		for (i : graph[now])	// now 작업과 연결된 i작업의 진입차수 1 빼기
-		{
-			indegree[i]--;
-			dp[i] = max(dp[i], dp[now] + T[i]);	// now 작업 종료 후에 i작업 시간 더한 것 중에서 최대값
+        // now 이후에 가능한 작업들
+        for (int next : graph[now])
+        {
+            indegree[next]--;
 
-			if (indegree[i] == 0)
-				q.push(i);
-		}
-	}
+            // next 작업 완료 시간 갱신
+            dp[next] = max(dp[next], dp[now] + T[next]);
+
+            if (indegree[next] == 0)
+                q.push(next);
+        }
+    }
 }
 
 int main(void)
 {
-	// 작업 개수 입력
-	cin >> N;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-	graph.resize(N + 1);
-	indegree.assign(N + 1, 0);	// 진입 차수 0으로 초기화
-	T.assign(N + 1, 0);
+    cin >> N;
 
-	// dp[i]: i번 작업까지의 최소 수행 시간
-	dp.assign(N + 1, 0);
+    graph.resize(N + 1);
+    indegree.assign(N + 1, 0);
+    T.assign(N + 1, 0);
+    dp.assign(N + 1, 0);
 
-	for (int i = 1; i < N + 1; ++i)
-	{
+    for (int i = 1; i <= N; ++i)
+    {
+        int time, cnt;
+        cin >> time >> cnt;
 
-	}
-		cout 
+        T[i] = time;
+
+        // 선행 작업이 없는 경우 자기 시간부터 시작
+        dp[i] = time;
+
+        for (int j = 0; j < cnt; ++j)
+        {
+            int prev;
+            cin >> prev;
+
+            // prev -> i
+            graph[prev].push_back(i);
+
+            indegree[i]++;
+        }
+    }
+
+    topology_sort();
+
+    int answer = 0;
+
+    for (int i = 1; i <= N; ++i)
+    {
+        answer = max(answer, dp[i]);
+    }
+
+    cout << answer;
 }
